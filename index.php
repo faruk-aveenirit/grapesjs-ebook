@@ -10,9 +10,11 @@
     <script src="https://unpkg.com/grapesjs-preset-newsletter"></script>
     <script src="https://unpkg.com/grapesjs-preset-webpage"></script>
     <script src="https://unpkg.com/grapesjs-video-embed-manager"></script>
+    <script src="https://unpkg.com/grapesjs-plugin-ckeditor"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
       body, html {
-        height: 100%;
+        /*height: 100%;*/
         margin: 0;
       }
       .app-wrap {
@@ -68,6 +70,9 @@
           opacity: 1;
         }
       }
+      .d-done{
+          display: none;
+      }
     </style>
   </head>
   <body>
@@ -84,9 +89,10 @@
       <div id="gjs"></div>
     </div>
   </div>
-
-
+  <script src="./main.js"></script>
+  <script src="./blocks.js"></script>
     <script type="text/javascript">
+
 
         // window.editor = grapesjs.init({
         //   height: '100%',
@@ -107,66 +113,42 @@
         //     }
         //   }
         // });
-        const editor = grapesjs.init({
-          container: '#gjs',
-          height: '100%',
-          storageManager: false,
-          plugins: ['grapesjs-blocks-basic'],
-          pageManager: {
-            pages: [{
-              id: 'page-1',
-              name: 'Page 1',
-              component: '<div id="comp1">Page 1</div>',
-              styles: '#comp1 { color: red }',
-            }, {
-              id: 'page-2',
-              name: 'Page 2',
-              component: '<div id="comp2">Page 2</div>',
-              styles: '#comp2 { color: green }',
-            }, {
-              id: 'page-3',
-              name: 'Page 3',
-              component: '<div id="comp3">Page 3</div>',
-              styles: '#comp3 { color: blue }',
-            }]
-          },
-        });
 
-        const pm = editor.Pages;
-
-        const app = new Vue({
-          el: '.pages-wrp',
-          data: { pages: [] },
-          mounted() {
-            this.setPages(pm.getAll());
-            editor.on('page', () => {
-              this.pages = [...pm.getAll()];
-            });
-          },
-          methods: {
-            setPages(pages) {
-              this.pages = [...pages];
-            },
-            isSelected(page) {
-              return pm.getSelected().id == page.id;
-            },
-            selectPage(pageId) {
-              return pm.select(pageId);
-            },
-            removePage(pageId) {
-              return pm.remove(pageId);
-            },
-            addPage() {
-              const len = pm.getAll().length;
-              pm.add({
-                name: `Page ${len + 1}`,
-                component: '<div>New page</div>',
-              });
-            },
-          }
-        });
+        // Define a new custom component
+        // const app = new Vue({
+        //   el: '.pages-wrp',
+        //   data: { pages: [] },
+        //   mounted() {
+        //     this.setPages(pm.getAll());
+        //     editor.on('page', () => {
+        //       this.pages = [...pm.getAll()];
+        //     });
+        //   },
+        //   methods: {
+        //     setPages(pages) {
+        //       this.pages = [...pages];
+        //     },
+        //     isSelected(page) {
+        //       return pm.getSelected().id == page.id;
+        //     },
+        //     selectPage(pageId) {
+        //       return pm.select(pageId);
+        //     },
+        //     removePage(pageId) {
+        //       return pm.remove(pageId);
+        //     },
+        //     addPage() {
+        //       const len = pm.getAll().length;
+        //       pm.add({
+        //         name: `Page ${len + 1}`,
+        //         component: '<div>New page</div>',
+        //       });
+        //     },
+        //   }
+        // });
 
 
 </script>
   </body>
 </html>
+
