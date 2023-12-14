@@ -1,12 +1,22 @@
 const editor = grapesjs.init({
     container: '#gjs',
     storageManager: false,
-    plugins: ['grapesjs-preset-newsletter','grapesjs-blocks-basic','grapesjs-plugin-ckeditor','grapesjs-blocks-table'],
+    plugins: ['grapesjs-preset-newsletter','grapesjs-plugin-ckeditor','gjs-blocks-basic','grapesjs-blocks-table','grapesjs-aveenir-ebook-block'],
     pluginsOpts: {
         'grapesjs-preset-newsletter': {},
-        'grapesjs-blocks-basic': {},
+        'gjs-blocks-basic': {
+            category:"Custom Blocks",
+            blocks:['link', 'image', 'video', 'map'],
+        },
         'grapesjs-plugin-ckeditor': {},
-        'grapesjs-blocks-table': {},
+        'grapesjs-blocks-table': {
+            tblResizable:true,
+            cellsResizable:true,
+            componentCell:"custom-table-td",
+            componentCellHeader:"custom-table-th",
+            componentRow:"custom-table-tr",
+        },
+        'grapesjs-aveenir-ebook-block':{}
     },
     pageManager: {
         pages: [{
@@ -88,7 +98,7 @@ editor.Commands.add("save-db", {
         // });
     },
 });
-editor.on('page', () => {
-    pm.getSelected().id
-    console.log('lll')
-});
+// editor.on('page', () => {
+//     pm.getSelected().id
+//     console.log('lll')
+// });

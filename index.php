@@ -4,14 +4,17 @@
     <meta charset="utf-8">
     <title>GrapesJS Preset Webpage</title>
     <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<!--    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>-->
     <script src="https://unpkg.com/grapesjs"></script>
-    <script src="https://unpkg.com/grapesjs-blocks-basic"></script>
     <script src="https://unpkg.com/grapesjs-preset-newsletter"></script>
     <script src="https://unpkg.com/grapesjs-preset-webpage"></script>
-    <script src="https://unpkg.com/grapesjs-video-embed-manager"></script>
+      <script src="https://unpkg.com/grapesjs-blocks-basic"></script>
+<!--      <script src="https://unpkg.com/grapesjs-blocks-table"></script>-->
+      <script src="./grapesjs-blocks-table.min.js"></script>
+<!--    <script src="https://unpkg.com/grapesjs-video-embed-manager"></script>  -->
     <script src="https://unpkg.com/grapesjs-plugin-ckeditor"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="./custom-plugins.js"></script>
+<!--    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>  -->
     <style>
       body, html {
         /*height: 100%;*/
@@ -89,65 +92,109 @@
       <div id="gjs"></div>
     </div>
   </div>
+  <div id="model-popup" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="tts-block">
+
+              <section>
+                  <!-- <select id="voiceSelect"></select> -->
+                  <div class='voice-block'>
+                      <p class="lead text-light mt-4">Select Voice</p>
+                      <select id="voices" class="form-select bg-secondary text-light"> </select>
+                  </div>
+                  </select>
+                  <div class="d-flex mt-4 text-light">
+                      <div>
+                          <p class="lead">Volume</p>
+                          <input type="range"
+                                 class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+                                 min="0" max="1" value="1" step="0.1" id="volume"/>
+                          <span id="volume-label" class="ms-2">1</span>
+                      </div>
+                      <div>
+                          <p class="lead">Rate</p>
+                          <input type="range"
+                                 class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+                                 min="0.1" max="10" value="1" id="rate" step="0.1"/>
+                          <span id="rate-label" class="ms-2">1</span>
+                      </div>
+                      <div>
+                          <p class="lead">Pitch</p>
+                          <input type="range"
+                                 class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+                                 min="0" max="2" value="1" step="0.1" id="pitch"/>
+                          <span id="pitch-label" class="ms-2">1</span>
+                      </div>
+                  </div>
+
+                  <div class="mb-5 pt-5">
+                      <button id="start"
+                              class="btn btn-primary">Start
+                      </button>
+                      <button id="pause"
+                              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Pause
+                      </button>
+                      <button id="resume"
+                              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Resume
+                      </button>
+                      <button id="cancel"
+                              class="btn btn-danger">Cancel
+                      </button>
+                  </div>
+              </section>
+          </div>
+      </div>
+  </div>
   <script src="./main.js"></script>
-  <script src="./blocks.js"></script>
+<!--  <script src="./blocks.js"></script>-->
     <script type="text/javascript">
 
-
-        // window.editor = grapesjs.init({
-        //   height: '100%',
-        //   showOffsets: true,
-        //   noticeOnUnload: false,
-        //   storageManager: false,
-        //   container: '#gjs',
-        //   fromElement: true,
-        //
-        //   plugins: ['grapesjs-preset-newsletter','grapesjs-video-embed-manager'],
-        //   pluginsOpts: {
-        //     'grapesjs-preset-newsletter': {},
-        //     'grapesjs-video-embed-manager': {
-        //       resources: [ 'youtube', 'vimeo', 'local' ],
-        //       per_page: 5,
-        //       youtubeLoadCallback: (data) => data,
-        //       youtubeLoadUrl: '/fake/callback'
-        //     }
-        //   }
+        // const editor = grapesjs.init({
+        //     container: '#gjs',
+        //     storageManager: false,
+        //     plugins: ['grapesjs-preset-newsletter','grapesjs-blocks-basic','grapesjs-plugin-ckeditor','grapesjs-blocks-table','grapesjs-mcq-block'],
+        //     pluginsOpts: {
+        //         'grapesjs-preset-newsletter': {},
+        //         'grapesjs-blocks-basic': {
+        //             category:"Basic",
+        //             blocks:['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map'],
+        //         },
+        //         'grapesjs-plugin-ckeditor': {},
+        //         'grapesjs-blocks-table': {},
+        //     },
+        //     pageManager: {
+        //         pages: [{
+        //             id: 'page-1',
+        //             name: 'Page 1',
+        //             component: '<div id="comp1">Page 1</div>',
+        //             styles: '#comp1 { color: red }',
+        //         }, {
+        //             id: 'page-2',
+        //             name: 'Page 2',
+        //             component: '<div id="comp2">Page 2</div>',
+        //             styles: '#comp2 { color: green }',
+        //         }, {
+        //             id: 'page-3',
+        //             name: 'Page 3',
+        //             component: '<div id="comp3">Page 3</div>',
+        //             styles: '#comp3 { color: blue }',
+        //         }]
+        //     },
+        //     domComponents: { storeWrapper: 1 },
+        //     deviceManager: {
+        //         devices: [
+        //             {
+        //                 id: 'Desktop',
+        //                 name: "Desktop",
+        //                 width: "800", // default size
+        //                 height: "800px",
+        //                 widthMedia: "", // this value will be used in CSS @media
+        //             }
+        //         ],
+        //     },
         // });
-
-        // Define a new custom component
-        // const app = new Vue({
-        //   el: '.pages-wrp',
-        //   data: { pages: [] },
-        //   mounted() {
-        //     this.setPages(pm.getAll());
-        //     editor.on('page', () => {
-        //       this.pages = [...pm.getAll()];
-        //     });
-        //   },
-        //   methods: {
-        //     setPages(pages) {
-        //       this.pages = [...pages];
-        //     },
-        //     isSelected(page) {
-        //       return pm.getSelected().id == page.id;
-        //     },
-        //     selectPage(pageId) {
-        //       return pm.select(pageId);
-        //     },
-        //     removePage(pageId) {
-        //       return pm.remove(pageId);
-        //     },
-        //     addPage() {
-        //       const len = pm.getAll().length;
-        //       pm.add({
-        //         name: `Page ${len + 1}`,
-        //         component: '<div>New page</div>',
-        //       });
-        //     },
-        //   }
-        // });
-
-
 </script>
   </body>
 </html>
