@@ -120,27 +120,27 @@ grapesjs.plugins.add('grapesjs-aveenir-ebook-block', (editor, options) => {
       <div class="gjs-block-label">MCQ</div>
     `, // You can use HTML/SVG inside labels
         content: `<div  style='margin-top:0px !important; border:1px solid #efefef; margin-bottom:20px' class='mcqblock el-X'>
-    <div   style="box-sizing: border-box; font-size:22px; color:#333; padding: 10px;">How are you feeling today?</div>
-   <div class='mcqoption'>
-    <table style='width:100%'>
-    <tr>
-    <td> <input name="contact" type="radio" /></td>
-    <td style='width:50%; '><div style='font-size: 16px'> Excited </div> </td>
-    <td> <input name="contact" type="radio" /></td>
-    <td style='width:50%'><div style='font-size: 16px'> Okayish </div> </td>
-  </tr>
-    <tr>
-    <td> <input name="contact" type="radio" /></td>
-    <td style='width:50%'><div style='font-size: 16px'> Sad </div> </td>
-    <td> <input name="contact" type="radio" /></td>
-    <td style='width:50%'><div style='font-size: 16px'> Angry</div> </td>
-  </tr>
-  <tr>
-  <td colspan='4'><button style='margin:0 auto; font-size:18px; margin:10px auto; padding: 15px 5px;' class='checkanswer'>Check Answer</button> <br />
-  <div class='correctAnswer' style='background:green; padding:10px; color:#fff; font-size:20px' >   Excited </div></td>
-  </tr>
-    </table>
-  </div>`,
+            <div   style="box-sizing: border-box; font-size:22px; color:#333; padding: 10px;">How are you feeling today?</div>
+           <div class='mcqoption'>
+            <table style='width:100%'>
+                <tr>
+                    <td> <input name="contact" type="radio" /></td>
+                    <td style='width:50%; '><div style='font-size: 16px'> Excited </div> </td>
+                    <td> <input name="contact" type="radio" /></td>
+                    <td style='width:50%'><div style='font-size: 16px'> Okayish </div> </td>
+                </tr>
+                <tr>
+                    <td> <input name="contact" type="radio" /></td>
+                    <td style='width:50%'><div style='font-size: 16px'> Sad </div> </td>
+                    <td> <input name="contact" type="radio" /></td>
+                    <td style='width:50%'><div style='font-size: 16px'> Angry</div> </td>
+                </tr>
+                <tr>
+              <td colspan='4'><button style='margin:0 auto; font-size:18px; margin:10px auto; padding: 15px 5px;' class='checkanswer'>Check Answer</button> <br />
+              <div class='correctAnswer' style='background:green; padding:10px; color:#fff; font-size:20px' >   Excited </div></td>
+              </tr>
+            </table>
+          </div>`,
         category: 'Custom Blocks',
         attributes: {
             title: "Insert QUIZ",
@@ -150,18 +150,19 @@ grapesjs.plugins.add('grapesjs-aveenir-ebook-block', (editor, options) => {
 
     editor.BlockManager.add("Audio-block", {
         id: 'jsFunc("randomId")',
-        label: "Audio",
+        label: "Audio Block",
         media: `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0,0,256,256"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M24.15625,3c-0.30469,0 -0.60547,0.0625 -0.90625,0.15625c-0.60547,0.19141 -1.18359,0.55078 -1.6875,1.0625l-11.75,11.75h-6.8125c-1.66797,0 -3.03125,1.36328 -3.03125,3.03125v12c0,1.66797 1.36328,3.03125 3.03125,3.03125h6.8125l11.71875,11.65625c1.11719,1.12109 2.55078,1.61328 3.71875,1.0625c1.17578,-0.55469 1.75,-1.89062 1.75,-3.4375v-37c0,-1.5 -0.76562,-2.74609 -1.9375,-3.15625c-0.29297,-0.10156 -0.60156,-0.15625 -0.90625,-0.15625zM24.1875,5c0.10156,0 0.17969,0.00781 0.25,0.03125c0.28516,0.09766 0.5625,0.35156 0.5625,1.28125v37c0,1.06641 -0.35156,1.54297 -0.59375,1.65625c-0.24219,0.11328 -0.73047,0.125 -1.5,-0.65625l-12.59375,-12.59375c-0.01953,-0.01172 -0.04297,-0.02344 -0.0625,-0.03125c0.07422,0.06641 -0.25,-0.56641 -0.25,-0.9375v-11.5c0,-0.37109 0.33594,-1.01172 0.25,-0.9375c0.02344,-0.01953 0.04297,-0.03906 0.0625,-0.0625l12.65625,-12.625c0.46875,-0.47266 0.91016,-0.62109 1.21875,-0.625zM38.28125,6.8125c-0.4375,0.07422 -0.77344,0.42969 -0.82422,0.87109c-0.04687,0.44141 0.19531,0.86328 0.60547,1.03516c5.94922,3 10,9.15234 10,16.28125c0,7.12891 -4.05078,13.28125 -10,16.28125c-0.36719,0.125 -0.625,0.45313 -0.66797,0.83594c-0.04297,0.38672 0.14063,0.76172 0.47266,0.96484c0.32813,0.19922 0.74609,0.19141 1.07031,-0.01953c6.60156,-3.33203 11.125,-10.16797 11.125,-18.0625c0,-7.89453 -4.52344,-14.73047 -11.125,-18.0625c-0.17187,-0.09766 -0.36719,-0.14062 -0.5625,-0.125c-0.03125,0 -0.0625,0 -0.09375,0zM34.71875,12.125c-0.44531,0.05469 -0.80078,0.40234 -0.86328,0.84766c-0.06641,0.44141 0.17188,0.875 0.58203,1.05859c3.90234,2.10547 6.5625,6.21484 6.5625,10.96875c0,4.73828 -2.64844,8.85938 -6.53125,10.96875c-0.48437,0.26563 -0.66016,0.875 -0.39062,1.35938c0.26563,0.48438 0.875,0.66016 1.35938,0.39063c4.50781,-2.44922 7.5625,-7.23437 7.5625,-12.71875c0,-5.5 -3.0625,-10.30469 -7.59375,-12.75c-0.17969,-0.10156 -0.38672,-0.14453 -0.59375,-0.125c-0.03125,0 -0.0625,0 -0.09375,0zM3,18.03125h5.1875c-0.12891,0.38281 -0.1875,0.80078 -0.1875,1.21875v11.5c0,0.41797 0.0625,0.83203 0.1875,1.21875h-5.1875c-0.53906,0 -0.96875,-0.42969 -0.96875,-0.96875v-12c0,-0.53906 0.42969,-0.96875 0.96875,-0.96875zM30.53125,18.40625c-0.48437,0.05859 -0.85156,0.45703 -0.875,0.94531c-0.02344,0.48438 0.30469,0.91797 0.78125,1.02344c2.04688,0.53516 3.5625,2.40234 3.5625,4.625c0,2.22266 -1.51562,4.08984 -3.5625,4.625c-0.53516,0.13672 -0.85547,0.68359 -0.71875,1.21875c0.13672,0.53516 0.68359,0.85547 1.21875,0.71875c2.91016,-0.76172 5.0625,-3.42578 5.0625,-6.5625c0,-3.13672 -2.15234,-5.80078 -5.0625,-6.5625c-0.13281,-0.03906 -0.26953,-0.04687 -0.40625,-0.03125z"></path></g></svg>`,
         // Use `video` component
         content: `<table style='width:100%; padding:10px 20px'>
                   <tr>
-                  <td   style='width:220px; padding:10px; width:150px; heith:80px; box-sizing: border-box' >
-                   <video  src='https://download.samplelib.com/mp3/sample-3s.mp3'     controls="" style="box-sizing: border-box; width: 220px; height: 32px;"></video>
-                   </td>
-                   </tr>
-                   <tr>
-                  <td >
-                  <div style='  box-sizing:border-box' data-gjs-highlightable="true" data-gjs-type="text" draggable="true" class="cke_editable cke_editable_inline cke_contents_ltr cke_show_borders" contenteditable="false" aria-readonly="false" spellcheck="false">Insert your text here</div>  </td>
+                      <td   style='width:220px; padding:10px; width:150px; heith:80px; box-sizing: border-box' >
+                       <video  src='https://download.samplelib.com/mp3/sample-3s.mp3'     controls="" style="box-sizing: border-box; width: 220px; height: 32px;"></video>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td >
+                      <div style='box-sizing:border-box' data-gjs-highlightable="true" data-gjs-type="text" draggable="true" class="cke_editable cke_editable_inline cke_contents_ltr cke_show_borders" contenteditable="false" aria-readonly="false" spellcheck="false">Insert your text here</div>  
+                    </td>
                   </tr>
             </table>
           `,
@@ -179,16 +180,15 @@ grapesjs.plugins.add('grapesjs-aveenir-ebook-block', (editor, options) => {
         // Use `video` component
         category: 'Custom Blocks',
         content: `<table class='ttspara'  style='width:100%; padding:10px 20px'>
-  <tr>
-  <td   style='width:120px; padding:10px;  box-sizing: border-box' >
-<svg class='js-tts-play' style='cursor:pointer' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70px" height="70px" viewBox="0,0,256,256"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(2,2)"><path d="M64,14c-27.61424,0 -50,22.38576 -50,50c0,27.61424 22.38576,50 50,50c27.61424,0 50,-22.38576 50,-50c0,-27.61424 -22.38576,-50 -50,-50z" fill="#fff8f8"></path><path d="M64,117c-29.2,0 -53,-23.8 -53,-53c0,-29.2 23.8,-53 53,-53c29.2,0 53,23.8 53,53c0,29.2 -23.8,53 -53,53zM64,17c-25.9,0 -47,21.1 -47,47c0,25.9 21.1,47 47,47c25.9,0 47,-21.1 47,-47c0,-25.9 -21.1,-47 -47,-47z" fill="#212223"></path><path d="M64,84.5c-1.7,0 -3,-1.3 -3,-3v-30c0,-1.7 1.3,-3 3,-3c1.7,0 3,1.3 3,3v30c0,1.7 -1.3,3 -3,3zM74,84.5c-1.7,0 -3,-1.3 -3,-3v-15c0,-1.7 1.3,-3 3,-3c1.7,0 3,1.3 3,3v15c0,1.7 -1.3,3 -3,3zM84,84.5c-1.7,0 -3,-1.3 -3,-3v-20c0,-1.7 1.3,-3 3,-3c1.7,0 3,1.3 3,3v20c0,1.7 -1.3,3 -3,3zM54,84.5c-1.7,0 -3,-1.3 -3,-3v-20c0,-1.7 1.3,-3 3,-3c1.7,0 3,1.3 3,3v20c0,1.7 -1.3,3 -3,3zM44,84.5c-1.7,0 -3,-1.3 -3,-3v-9c0,-1.7 1.3,-3 3,-3c1.7,0 3,1.3 3,3v9c0,1.7 -1.3,3 -3,3z" fill="#212223"></path></g></g></svg>
-<svg class='js-tts-pause' style='cursor:pointer; display:none'  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70px" height="70px" viewBox="0,0,256,256"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(2,2)"><path d="M64,14c-27.61424,0 -50,22.38576 -50,50c0,27.61424 22.38576,50 50,50c27.61424,0 50,-22.38576 50,-50c0,-27.61424 -22.38576,-50 -50,-50z" fill="#ffffff"></path><path d="M64,117c-29.2,0 -53,-23.8 -53,-53c0,-29.2 23.8,-53 53,-53c29.2,0 53,23.8 53,53c0,29.2 -23.8,53 -53,53zM64,17c-25.9,0 -47,21.1 -47,47c0,25.9 21.1,47 47,47c25.9,0 47,-21.1 47,-47c0,-25.9 -21.1,-47 -47,-47z" fill="#161717"></path><path d="M57,79.5c-1.7,0 -3,-1.3 -3,-3v-25c0,-1.7 1.3,-3 3,-3c1.7,0 3,1.3 3,3v25c0,1.7 -1.3,3 -3,3zM71,79.5c-1.7,0 -3,-1.3 -3,-3v-25c0,-1.7 1.3,-3 3,-3c1.7,0 3,1.3 3,3v25c0,1.7 -1.3,3 -3,3z" fill="#161717"></path></g></g></svg>
-
-  </td>
-  <td >
-  <div style='box-sizing:border-box' data-gjs-highlightable="true" data-gjs-type="text" draggable="true" class="cke_editable cke_editable_inline cke_contents_ltr cke_show_borders" contenteditable="false" aria-readonly="false" spellcheck="false">Insert your text here</div>  </td>
-  </tr>
-    </table>
+          <tr>
+          <td style='width:120px; padding:10px;  box-sizing: border-box' >
+            <svg class='js-tts-play' style='cursor:pointer' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70px" height="70px" viewBox="0,0,256,256"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(2,2)"><path d="M64,14c-27.61424,0 -50,22.38576 -50,50c0,27.61424 22.38576,50 50,50c27.61424,0 50,-22.38576 50,-50c0,-27.61424 -22.38576,-50 -50,-50z" fill="#fff8f8"></path><path d="M64,117c-29.2,0 -53,-23.8 -53,-53c0,-29.2 23.8,-53 53,-53c29.2,0 53,23.8 53,53c0,29.2 -23.8,53 -53,53zM64,17c-25.9,0 -47,21.1 -47,47c0,25.9 21.1,47 47,47c25.9,0 47,-21.1 47,-47c0,-25.9 -21.1,-47 -47,-47z" fill="#212223"></path><path d="M64,84.5c-1.7,0 -3,-1.3 -3,-3v-30c0,-1.7 1.3,-3 3,-3c1.7,0 3,1.3 3,3v30c0,1.7 -1.3,3 -3,3zM74,84.5c-1.7,0 -3,-1.3 -3,-3v-15c0,-1.7 1.3,-3 3,-3c1.7,0 3,1.3 3,3v15c0,1.7 -1.3,3 -3,3zM84,84.5c-1.7,0 -3,-1.3 -3,-3v-20c0,-1.7 1.3,-3 3,-3c1.7,0 3,1.3 3,3v20c0,1.7 -1.3,3 -3,3zM54,84.5c-1.7,0 -3,-1.3 -3,-3v-20c0,-1.7 1.3,-3 3,-3c1.7,0 3,1.3 3,3v20c0,1.7 -1.3,3 -3,3zM44,84.5c-1.7,0 -3,-1.3 -3,-3v-9c0,-1.7 1.3,-3 3,-3c1.7,0 3,1.3 3,3v9c0,1.7 -1.3,3 -3,3z" fill="#212223"></path></g></g></svg>
+            <svg class='js-tts-pause' style='cursor:pointer; display:none'  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70px" height="70px" viewBox="0,0,256,256"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(2,2)"><path d="M64,14c-27.61424,0 -50,22.38576 -50,50c0,27.61424 22.38576,50 50,50c27.61424,0 50,-22.38576 50,-50c0,-27.61424 -22.38576,-50 -50,-50z" fill="#ffffff"></path><path d="M64,117c-29.2,0 -53,-23.8 -53,-53c0,-29.2 23.8,-53 53,-53c29.2,0 53,23.8 53,53c0,29.2 -23.8,53 -53,53zM64,17c-25.9,0 -47,21.1 -47,47c0,25.9 21.1,47 47,47c25.9,0 47,-21.1 47,-47c0,-25.9 -21.1,-47 -47,-47z" fill="#161717"></path><path d="M57,79.5c-1.7,0 -3,-1.3 -3,-3v-25c0,-1.7 1.3,-3 3,-3c1.7,0 3,1.3 3,3v25c0,1.7 -1.3,3 -3,3zM71,79.5c-1.7,0 -3,-1.3 -3,-3v-25c0,-1.7 1.3,-3 3,-3c1.7,0 3,1.3 3,3v25c0,1.7 -1.3,3 -3,3z" fill="#161717"></path></g></g></svg>
+          </td>
+          <td >
+          <div style='box-sizing:border-box' data-gjs-highlightable="true" data-gjs-type="text" draggable="true" class="cke_editable cke_editable_inline cke_contents_ltr cke_show_borders" contenteditable="false" aria-readonly="false" spellcheck="false">Insert your text here</div>  </td>
+          </tr>
+            </table>
   `,
         // The component `image` is activatable (shows the Asset Manager).
         // We want to activate it once dropped in the canvas.
@@ -208,6 +208,19 @@ grapesjs.plugins.add('grapesjs-aveenir-ebook-block', (editor, options) => {
         },
     });
 
+   editor.BlockManager.add('audio-block', {
+        label: 'Audio Block',
+        content: {
+            type: 'audio',
+            src: 'path/to/default-audio.mp3', // Provide a default audio file if needed
+            style: {
+                width: '100%',
+                height: 'auto',
+            },
+        },
+        attributes: { class: 'fa fa-music' },
+        category: 'Custom Blocks',
+    });
 
 });
 // JavaScript function to show the correct answer
@@ -217,5 +230,17 @@ grapesjs.plugins.add('grapesjs-aveenir-ebook-block', (editor, options) => {
 //         answerBlock.style.display = 'block';
 //     }
 // }
+
+function handleAudioChange(input) {
+    const audioPlayer = document.getElementById('audioPlayer');
+    const file = input.files[0];
+
+    if (file) {
+        const objectURL = URL.createObjectURL(file);
+        audioPlayer.src = objectURL;
+    } else {
+        audioPlayer.src = '';
+    }
+}
 
 //End Grapesjs Custom Plugins

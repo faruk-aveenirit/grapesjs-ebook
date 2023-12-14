@@ -1,6 +1,12 @@
 const editor = grapesjs.init({
     container: '#gjs',
     storageManager: false,
+    assetManager: {
+        embedAsBase64: false, // Set to true if you want to embed assets as base64
+        assets: [
+            // You can predefine assets here if needed
+        ],
+    },
     plugins: ['grapesjs-preset-newsletter','grapesjs-plugin-ckeditor','gjs-blocks-basic','grapesjs-blocks-table','grapesjs-aveenir-ebook-block'],
     pluginsOpts: {
         'grapesjs-preset-newsletter': {},

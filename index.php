@@ -92,61 +92,7 @@
       <div id="gjs"></div>
     </div>
   </div>
-  <div id="model-popup" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-          <span class="close">&times;</span>
-          <div class="tts-block">
 
-              <section>
-                  <!-- <select id="voiceSelect"></select> -->
-                  <div class='voice-block'>
-                      <p class="lead text-light mt-4">Select Voice</p>
-                      <select id="voices" class="form-select bg-secondary text-light"> </select>
-                  </div>
-                  </select>
-                  <div class="d-flex mt-4 text-light">
-                      <div>
-                          <p class="lead">Volume</p>
-                          <input type="range"
-                                 class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
-                                 min="0" max="1" value="1" step="0.1" id="volume"/>
-                          <span id="volume-label" class="ms-2">1</span>
-                      </div>
-                      <div>
-                          <p class="lead">Rate</p>
-                          <input type="range"
-                                 class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
-                                 min="0.1" max="10" value="1" id="rate" step="0.1"/>
-                          <span id="rate-label" class="ms-2">1</span>
-                      </div>
-                      <div>
-                          <p class="lead">Pitch</p>
-                          <input type="range"
-                                 class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
-                                 min="0" max="2" value="1" step="0.1" id="pitch"/>
-                          <span id="pitch-label" class="ms-2">1</span>
-                      </div>
-                  </div>
-
-                  <div class="mb-5 pt-5">
-                      <button id="start"
-                              class="btn btn-primary">Start
-                      </button>
-                      <button id="pause"
-                              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Pause
-                      </button>
-                      <button id="resume"
-                              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Resume
-                      </button>
-                      <button id="cancel"
-                              class="btn btn-danger">Cancel
-                      </button>
-                  </div>
-              </section>
-          </div>
-      </div>
-  </div>
   <script src="./main.js"></script>
 <!--  <script src="./blocks.js"></script>-->
     <script type="text/javascript">
